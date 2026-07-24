@@ -2,40 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="The official website of the High School for Health Careers and Sciences Robotics Club."
+        content="Official website of the HSHCS Trojans Robotics Club and FIRST Tech Challenge Team 26065 at the High School for Health Careers and Sciences."
     >
 
-    <title>HSHCS Robotics Club</title>
+    <title>HSHCS Trojans | FTC Team 26065</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- =========================
+         HEADER AND NAVIGATION
+    ========================== -->
+
     <header class="site-header">
         <div class="container nav-container">
 
-            <a href="#home" class="club-name">
-                HSHCS Robotics Club
+            <a href="#home" class="brand">
+                <span class="brand-name">HSHCS Trojans</span>
+                <span class="brand-team">FTC Team 26065</span>
             </a>
 
             <button
                 class="menu-button"
                 id="menuButton"
+                type="button"
                 aria-label="Open navigation menu"
+                aria-controls="siteNav"
                 aria-expanded="false"
             >
-                ☰
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <nav class="site-nav" id="siteNav">
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
+                <a href="#team">Our Team</a>
+                <a href="#ftc">FTC</a>
                 <a href="#projects">Projects</a>
+                <a href="#curriculum">Curriculum</a>
                 <a href="#join">Join</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -46,173 +61,486 @@
 
     <main>
 
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
         <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+
             <div class="container hero-content">
 
                 <p class="eyebrow">
                     High School for Health Careers and Sciences
                 </p>
 
+                <p class="team-badge">
+                    FIRST Tech Challenge Team 26065
+                </p>
+
                 <h1>
-                    Build. Code. Create.
+                    HSHCS Trojans
                 </h1>
 
+                <p class="hero-tagline">
+                    Building robots. Developing engineers. Creating opportunities.
+                </p>
+
                 <p class="hero-text">
-                    The HSHCS Robotics Club gives students opportunities to
-                    explore robotics, engineering, artificial intelligence,
-                    computer programming, and teamwork through hands-on projects.
+                    The HSHCS Trojans bring students together to explore robotics,
+                    engineering, computer programming, artificial intelligence,
+                    competition, leadership, and teamwork through hands-on learning.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#join" class="button primary-button">
-                        Join the Club
+
+                    <a href="#team" class="button primary-button">
+                        Meet the Team
                     </a>
 
-                    <a href="#projects" class="button secondary-button">
-                        Explore Our Projects
+                    <a href="#curriculum" class="button secondary-button">
+                        Explore Our Curriculum
                     </a>
+
+                    <a
+                        href="https://www.firstinspires.org/programs/ftc/"
+                        class="button outline-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit FIRST Tech Challenge
+                    </a>
+
                 </div>
 
             </div>
         </section>
 
 
-        <section class="section" id="about">
+        <!-- =========================
+             TEAM INTRODUCTION
+        ========================== -->
+
+        <section class="section" id="team">
             <div class="container">
 
-                <p class="section-label">Who We Are</p>
+                <div class="section-heading">
+                    <p class="section-label">Our Team</p>
 
-                <h2>
-                    A place for students to imagine, design, and build
-                </h2>
+                    <h2>
+                        HSHCS Trojans Robotics
+                    </h2>
 
-                <p class="section-introduction">
-                    Our robotics club welcomes students who are curious about
-                    technology, whether they are experienced builders or complete
-                    beginners. Members work together to solve problems, test ideas,
-                    and develop skills that can prepare them for college, careers,
-                    and future competitions.
-                </p>
+                    <p class="section-introduction">
+                        The HSHCS Trojans are the official robotics team of the
+                        High School for Health Careers and Sciences. Our team
+                        welcomes students who are interested in building,
+                        programming, designing, competing, and learning how
+                        technology can solve real-world problems.
+                    </p>
+                </div>
 
                 <div class="feature-grid">
 
                     <article class="feature-card">
-                        <h3>Robotics</h3>
-                        <p>
-                            Design, build, program, test, and improve robotic
-                            systems through collaborative projects.
-                        </p>
-                    </article>
+                        <div class="feature-icon" aria-hidden="true">01</div>
 
-                    <article class="feature-card">
-                        <h3>Artificial Intelligence</h3>
-                        <p>
-                            Explore computer vision, machine learning, object
-                            detection, and responsible uses of AI.
-                        </p>
-                    </article>
-
-                    <article class="feature-card">
                         <h3>Engineering</h3>
+
                         <p>
-                            Apply the engineering design process to real challenges
-                            using creativity, mathematics, and technology.
+                            Students apply the engineering design process to
+                            identify problems, create prototypes, test solutions,
+                            and improve their designs.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">02</div>
+
+                        <h3>Programming</h3>
+
+                        <p>
+                            Team members develop programming skills for robot
+                            control, autonomous movement, sensors, computer vision,
+                            and intelligent systems.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">03</div>
+
+                        <h3>Teamwork</h3>
+
+                        <p>
+                            Students build communication, leadership,
+                            documentation, presentation, and project-management
+                            skills through collaborative work.
                         </p>
                     </article>
 
                 </div>
+
             </div>
         </section>
 
 
-        <section class="section alternate-section" id="projects">
+        <!-- =========================
+             FIRST TECH CHALLENGE
+        ========================== -->
+
+        <section class="section alternate-section" id="ftc">
             <div class="container">
 
-                <p class="section-label">Student Work</p>
+                <div class="split-layout">
 
-                <h2>Featured projects</h2>
+                    <div class="split-content">
+
+                        <p class="section-label">
+                            FIRST Tech Challenge
+                        </p>
+
+                        <h2>
+                            FTC Team 26065
+                        </h2>
+
+                        <p>
+                            The HSHCS Trojans participate in FIRST Tech Challenge,
+                            an international robotics program in which students
+                            design, build, program, and operate robots for an
+                            annual competition challenge.
+                        </p>
+
+                        <p>
+                            FTC gives students opportunities to develop technical
+                            knowledge while practicing teamwork, strategy,
+                            problem-solving, outreach, leadership, and professional
+                            communication.
+                        </p>
+
+                        <a
+                            href="https://www.firstinspires.org/programs/ftc/"
+                            class="text-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Learn more on the official FIRST Tech Challenge website
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </div>
+
+                    <aside class="team-information-card">
+
+                        <p class="card-label">
+                            Official Team Information
+                        </p>
+
+                        <dl class="team-details">
+
+                            <div>
+                                <dt>Team Name</dt>
+                                <dd>HSHCS Trojans</dd>
+                            </div>
+
+                            <div>
+                                <dt>FTC Team Number</dt>
+                                <dd>26065</dd>
+                            </div>
+
+                            <div>
+                                <dt>School</dt>
+                                <dd>
+                                    High School for Health Careers and Sciences
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Program</dt>
+                                <dd>FIRST Tech Challenge</dd>
+                            </div>
+
+                            <div>
+                                <dt>Location</dt>
+                                <dd>New York, New York</dd>
+                            </div>
+
+                        </dl>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="section" id="projects">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="section-label">Student Innovation</p>
+
+                    <h2>
+                        Featured robotics and AI projects
+                    </h2>
+
+                    <p class="section-introduction">
+                        Our students learn by designing, building, programming,
+                        testing, documenting, and presenting projects that combine
+                        robotics, engineering, and artificial intelligence.
+                    </p>
+                </div>
 
                 <div class="project-grid">
 
                     <article class="project-card">
+
                         <div class="project-number">01</div>
 
-                        <div>
-                            <h3>AI Tic-Tac-Toe Robot</h3>
+                        <div class="project-content">
+                            <p class="project-category">
+                                Robotics and Computer Vision
+                            </p>
+
+                            <h3>
+                                AI Tic-Tac-Toe Robot
+                            </h3>
+
                             <p>
                                 A robotic arm and computer-vision system designed
-                                to identify game pieces and play tic-tac-toe.
+                                to identify game pieces, understand the game board,
+                                make decisions, and play tic-tac-toe.
                             </p>
                         </div>
+
                     </article>
 
                     <article class="project-card">
+
                         <div class="project-number">02</div>
 
-                        <div>
-                            <h3>AI Object Detection</h3>
+                        <div class="project-content">
+                            <p class="project-category">
+                                Artificial Intelligence
+                            </p>
+
+                            <h3>
+                                AI Object Detection
+                            </h3>
+
                             <p>
-                                An interactive system that uses a camera and
-                                artificial intelligence to recognize everyday objects.
+                                An interactive system that uses a camera and an AI
+                                model to identify and announce common objects in
+                                real time.
                             </p>
                         </div>
+
                     </article>
 
                     <article class="project-card">
+
                         <div class="project-number">03</div>
 
-                        <div>
-                            <h3>Competition Robotics</h3>
+                        <div class="project-content">
+                            <p class="project-category">
+                                Competition Robotics
+                            </p>
+
+                            <h3>
+                                FIRST Tech Challenge Robot
+                            </h3>
+
                             <p>
-                                Students develop mechanical, electrical, programming,
-                                and teamwork skills while preparing for robotics
-                                challenges.
+                                Students analyze the annual FTC game, develop a
+                                strategy, prototype mechanisms, program the robot,
+                                and prepare for competition.
                             </p>
                         </div>
+
                     </article>
 
                 </div>
+
             </div>
         </section>
 
+
+        <!-- =========================
+             CURRICULUM
+        ========================== -->
+
+        <section class="section curriculum-section" id="curriculum">
+            <div class="container">
+
+                <div class="section-heading light-heading">
+                    <p class="section-label">
+                        Robotics Curriculum
+                    </p>
+
+                    <h2>
+                        A pathway from beginner to competition-ready
+                    </h2>
+
+                    <p class="section-introduction">
+                        Our developing curriculum will connect classroom learning,
+                        robotics club activities, engineering projects, and FIRST
+                        Tech Challenge preparation.
+                    </p>
+                </div>
+
+                <div class="curriculum-grid">
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">01</span>
+
+                        <h3>
+                            Foundations and Safety
+                        </h3>
+
+                        <p>
+                            Lab safety, tools, teamwork, robotics systems,
+                            measurement, and introductory design challenges.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">02</span>
+
+                        <h3>
+                            Mechanical Design
+                        </h3>
+
+                        <p>
+                            Structures, drivetrains, gears, mechanisms,
+                            prototyping, CAD, fabrication, and iterative design.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">03</span>
+
+                        <h3>
+                            Electronics and Sensors
+                        </h3>
+
+                        <p>
+                            Motors, controllers, wiring, power systems, sensors,
+                            troubleshooting, and safe electrical practices.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">04</span>
+
+                        <h3>
+                            Robot Programming
+                        </h3>
+
+                        <p>
+                            Driver-controlled programming, autonomous movement,
+                            logic, debugging, telemetry, and sensor integration.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">05</span>
+
+                        <h3>
+                            AI and Computer Vision
+                        </h3>
+
+                        <p>
+                            Image recognition, object detection, camera systems,
+                            machine learning concepts, ethics, and responsible AI.
+                        </p>
+                    </article>
+
+                    <article class="curriculum-card">
+                        <span class="curriculum-number">06</span>
+
+                        <h3>
+                            FTC Competition Readiness
+                        </h3>
+
+                        <p>
+                            Game analysis, strategy, engineering notebooks,
+                            outreach, presentations, testing, scouting, and match
+                            preparation.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="curriculum-notice">
+                    <p>
+                        Detailed curriculum maps, lessons, student resources,
+                        project guides, and competition materials will be added as
+                        the program develops.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             JOIN THE TEAM
+        ========================== -->
 
         <section class="section join-section" id="join">
             <div class="container join-content">
 
                 <div>
-                    <p class="section-label">Become a Member</p>
+                    <p class="section-label">
+                        Become a Trojan
+                    </p>
 
                     <h2>
                         No previous robotics experience is required
                     </h2>
 
                     <p>
-                        Students can join to learn programming, engineering,
-                        electronics, fabrication, design, leadership, and teamwork.
+                        Students can join the team to learn robotics, programming,
+                        engineering, electronics, fabrication, artificial
+                        intelligence, leadership, and teamwork.
                     </p>
                 </div>
 
                 <a
                     class="button light-button"
-                    href="mailto:hshcsroboticsclub@gmail.com?subject=HSHCS%20Robotics%20Club%20Membership"
+                    href="mailto:hshcsroboticsclub@gmail.com?subject=HSHCS%20Trojans%20Robotics%20Team%20Membership"
                 >
-                    Contact the Club
+                    Contact the Team
                 </a>
 
             </div>
         </section>
 
 
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
         <section class="section" id="contact">
             <div class="container contact-content">
 
                 <p class="section-label">Contact</p>
 
-                <h2>Connect with HSHCS Robotics Club</h2>
+                <h2>
+                    Connect with the HSHCS Trojans
+                </h2>
 
                 <p>
                     High School for Health Careers and Sciences<br>
                     New York, New York
+                </p>
+
+                <p>
+                    FIRST Tech Challenge Team 26065
                 </p>
 
                 <a
@@ -228,15 +556,26 @@
     </main>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer class="site-footer">
         <div class="container footer-content">
 
-            <p>
-                © <span id="currentYear"></span> HSHCS Robotics Club
-            </p>
+            <div>
+                <p class="footer-team-name">
+                    HSHCS Trojans
+                </p>
+
+                <p>
+                    FIRST Tech Challenge Team 26065
+                </p>
+            </div>
 
             <p>
-                High School for Health Careers and Sciences
+                © <span id="currentYear"></span>
+                High School for Health Careers and Sciences Robotics Club
             </p>
 
         </div>
