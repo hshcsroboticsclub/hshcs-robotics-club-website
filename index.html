@@ -1,1 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="The official website of the High School for Health Careers and Sciences Robotics Club."
+    >
+
+    <title>HSHCS Robotics Club</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+
+            <a href="#home" class="club-name">
+                HSHCS Robotics Club
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="site-nav" id="siteNav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#join">Join</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    High School for Health Careers and Sciences
+                </p>
+
+                <h1>
+                    Build. Code. Create.
+                </h1>
+
+                <p class="hero-text">
+                    The HSHCS Robotics Club gives students opportunities to
+                    explore robotics, engineering, artificial intelligence,
+                    computer programming, and teamwork through hands-on projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#join" class="button primary-button">
+                        Join the Club
+                    </a>
+
+                    <a href="#projects" class="button secondary-button">
+                        Explore Our Projects
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="section" id="about">
+            <div class="container">
+
+                <p class="section-label">Who We Are</p>
+
+                <h2>
+                    A place for students to imagine, design, and build
+                </h2>
+
+                <p class="section-introduction">
+                    Our robotics club welcomes students who are curious about
+                    technology, whether they are experienced builders or complete
+                    beginners. Members work together to solve problems, test ideas,
+                    and develop skills that can prepare them for college, careers,
+                    and future competitions.
+                </p>
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+                        <h3>Robotics</h3>
+                        <p>
+                            Design, build, program, test, and improve robotic
+                            systems through collaborative projects.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Artificial Intelligence</h3>
+                        <p>
+                            Explore computer vision, machine learning, object
+                            detection, and responsible uses of AI.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Engineering</h3>
+                        <p>
+                            Apply the engineering design process to real challenges
+                            using creativity, mathematics, and technology.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section alternate-section" id="projects">
+            <div class="container">
+
+                <p class="section-label">Student Work</p>
+
+                <h2>Featured projects</h2>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <div class="project-number">01</div>
+
+                        <div>
+                            <h3>AI Tic-Tac-Toe Robot</h3>
+                            <p>
+                                A robotic arm and computer-vision system designed
+                                to identify game pieces and play tic-tac-toe.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">02</div>
+
+                        <div>
+                            <h3>AI Object Detection</h3>
+                            <p>
+                                An interactive system that uses a camera and
+                                artificial intelligence to recognize everyday objects.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-number">03</div>
+
+                        <div>
+                            <h3>Competition Robotics</h3>
+                            <p>
+                                Students develop mechanical, electrical, programming,
+                                and teamwork skills while preparing for robotics
+                                challenges.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section join-section" id="join">
+            <div class="container join-content">
+
+                <div>
+                    <p class="section-label">Become a Member</p>
+
+                    <h2>
+                        No previous robotics experience is required
+                    </h2>
+
+                    <p>
+                        Students can join to learn programming, engineering,
+                        electronics, fabrication, design, leadership, and teamwork.
+                    </p>
+                </div>
+
+                <a
+                    class="button light-button"
+                    href="mailto:hshcsroboticsclub@gmail.com?subject=HSHCS%20Robotics%20Club%20Membership"
+                >
+                    Contact the Club
+                </a>
+
+            </div>
+        </section>
+
+
+        <section class="section" id="contact">
+            <div class="container contact-content">
+
+                <p class="section-label">Contact</p>
+
+                <h2>Connect with HSHCS Robotics Club</h2>
+
+                <p>
+                    High School for Health Careers and Sciences<br>
+                    New York, New York
+                </p>
+
+                <a
+                    class="email-link"
+                    href="mailto:hshcsroboticsclub@gmail.com"
+                >
+                    hshcsroboticsclub@gmail.com
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <p>
+                © <span id="currentYear"></span> HSHCS Robotics Club
+            </p>
+
+            <p>
+                High School for Health Careers and Sciences
+            </p>
+
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
