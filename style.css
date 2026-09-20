@@ -689,7 +689,26 @@ p {
         background var(--transition),
         border-color var(--transition);
 }
+.curriculum-card .button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: #ffd43b;
+    color: #071426;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 2px solid #ffd43b;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
 
+.curriculum-card .button:hover,
+.curriculum-card .button:focus-visible {
+    background: #ffffff;
+    color: #071426;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
 .curriculum-card:hover {
     border-color: rgba(78, 161, 255, 0.38);
     background: rgba(255, 255, 255, 0.085);
