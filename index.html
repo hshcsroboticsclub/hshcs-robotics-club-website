@@ -220,6 +220,23 @@
     .gallery img {
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
+    .link-grid {
+      display: grid; gap: 0.85rem;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 1rem;
+    }
+    @media (max-width: 700px) { .link-grid { grid-template-columns: 1fr; } }
+    .link-card {
+      display: block; background: var(--card); border: 1px solid var(--line);
+      border-radius: 14px; padding: 1.05rem 1.15rem; text-decoration: none;
+      color: inherit; transition: border-color 0.15s ease;
+    }
+    .link-card:hover { border-color: rgba(245,166,35,0.45); text-decoration: none; }
+    .link-card strong { display: block; color: var(--text); margin-bottom: 0.35rem; }
+    .link-card span { color: var(--muted); font-size: 0.95rem; }
+    .link-card .go { color: var(--accent-2); font-weight: 700; font-size: 0.9rem; margin-top: 0.55rem; display: inline-block; }
+    .first-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1rem 0 1.25rem; }
+    @media (max-width: 700px) { .first-stats { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -234,6 +251,7 @@
         <a href="#about">About</a>
         <a href="#gallery">Photos</a>
         <a href="school-projects.html">School projects</a>
+        <a href="#about-first">About FIRST</a>
         <a href="#path">Learn</a>
         <a href="#join">Join</a>
         <a href="sponsors.html">Sponsors</a>
@@ -310,16 +328,51 @@
       </div>
     </section>
 
+    <section id="about-first">
+      <div class="wrap">
+        <h2 class="section-title">About FIRST Tech Challenge</h2>
+        <p class="section-sub">HSHCS Trojans is <strong style="color:var(--text)">FTC Team 26065</strong>. We follow the official <a href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">FIRST Tech Challenge</a> program from <a href="https://www.firstinspires.org/" rel="noopener" target="_blank">FIRST</a> (For Inspiration and Recognition of Science and Technology) — grades 7–12 students design and build robots for an annual game, with mentors, outreach, and STEM skill-building on and off the field.</p>
+        <div class="first-stats">
+          <div class="stat"><strong>109k+</strong><span>FTC students worldwide</span></div>
+          <div class="stat"><strong>81</strong><span>countries in the program</span></div>
+          <div class="stat"><strong>61%</strong><span>of FIRST alumni declare engineering or CS by year 4 of college*</span></div>
+        </div>
+        <p style="color:var(--muted);font-size:0.85rem;margin:0 0 1rem">*Program stats from <a href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">firstinspires.org/programs/ftc</a>.</p>
+        <div class="link-grid">
+          <a class="link-card" href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">
+            <strong>The program</strong>
+            <span>How FTC works: design and build dynamic robots for a new game each September, develop STEM skills, practice engineering innovation, and do community outreach.</span>
+            <span class="go">Open FIRST Tech Challenge →</span>
+          </a>
+          <a class="link-card" href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">
+            <strong>The competition</strong>
+            <span>Each season has a new challenge (for 2026–2027: BIOBUZZ™ presented by RTX, part of the FIRST CANOPY™ season). Teams compete at events and earn awards for robot and outreach work.</span>
+            <span class="go">See the current season →</span>
+          </a>
+          <a class="link-card" href="https://www.firstinspires.org/programs/careers-and-scholarships" rel="noopener" target="_blank">
+            <strong>Careers &amp; benefits</strong>
+            <span>Hands-on STEM experience, teamwork, leadership, and workforce skills. FIRST also connects students to career discovery, alumni networks, and work-based learning pathways.</span>
+            <span class="go">Classroom to career →</span>
+          </a>
+          <a class="link-card" href="https://www.firstinspires.org/resources/library/scholarships" rel="noopener" target="_blank">
+            <strong>Scholarships</strong>
+            <span>FIRST participants can explore hundreds of scholarship opportunities from colleges, universities, technical schools, and partners through the FIRST Scholarship Program (Pearson Futures portal).</span>
+            <span class="go">Scholarship opportunities →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="ftc">
       <div class="wrap">
-        <h2 class="section-title">FIRST Tech Challenge</h2>
-        <p class="section-sub">Team 26065 builds and competes in FIRST Tech Challenge — strategy, prototypes, programming, and match prep for the annual game.</p>
+        <h2 class="section-title">Our FTC team</h2>
+        <p class="section-sub">Team 26065 builds and competes in FIRST Tech Challenge — strategy, prototypes, programming, and match prep for the annual game. Classroom AI builds live on a separate page.</p>
         <div class="cards" style="grid-template-columns:1.2fr 1fr">
           <article class="card">
             <div class="card-photo"><img src="images/project-ftc.jpg" width="800" height="1066" alt="Student assembling a wheeled FTC-style robot frame" loading="lazy" /></div>
             <div class="card-body">
               <h3>FTC competition robot</h3>
-              <p>Mechanical design, driver control, autonomous routines, notebooks, outreach, and tournament prep with FIRST Inspires.</p>
+              <p>Mechanical design, driver control, autonomous routines, notebooks, outreach, and tournament prep with <a href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">FIRST Tech Challenge</a>.</p>
             </div>
           </article>
           <a class="card" href="school-projects.html" style="text-decoration:none;color:inherit;display:block">
@@ -382,7 +435,7 @@
       <div class="wrap panel">
         <h2 class="section-title">Connect with the Trojans</h2>
         <p class="section-sub">High School for Health Careers and Sciences · New York, New York · FTC Team 26065</p>
-        <p><a href="mailto:hshcsroboticsclub@gmail.com">hshcsroboticsclub@gmail.com</a> · <a href="https://www.firstinspires.org/robotics/ftc" rel="noopener" target="_blank">About FIRST Tech Challenge</a></p>
+        <p><a href="mailto:hshcsroboticsclub@gmail.com">hshcsroboticsclub@gmail.com</a> · <a href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">FIRST Tech Challenge (official) →</a></p>
       </div>
     </section>
   </main>
@@ -395,6 +448,7 @@
       </div>
       <div>
         <div>Parents &amp; sponsors: email us to visit a practice or support the team.</div>
+        <div style="margin-top:0.65rem"><a href="https://www.firstinspires.org/programs/ftc/" rel="noopener" target="_blank">FIRST Tech Challenge</a> · <a href="https://www.firstinspires.org/resources/library/scholarships" rel="noopener" target="_blank">Scholarships</a></div>
       </div>
     </div>
   </footer>
