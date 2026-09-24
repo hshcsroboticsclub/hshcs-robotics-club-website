@@ -1,608 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Official website of the HSHCS Trojans Robotics Club and FIRST Tech Challenge Team 26065 at the High School for Health Careers and Sciences."
-    >
-
-    <title>HSHCS Trojans | FTC Team 26065</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HSHCS Trojans | FTC Team 26065</title>
+  <meta name="description" content="Official robotics team of the High School for Health Careers and Sciences. FIRST Tech Challenge Team 26065 — build robots, learn engineering, compete." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:title" content="HSHCS Trojans | FTC Team 26065" />
+  <meta property="og:description" content="Building robots. Developing engineers. Creating opportunities. Beginners welcome." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hshcsroboticsclub.org/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a623'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='800' fill='%231a1000'%3E26065%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --surface: #121a2b;
+      --card: #182235;
+      --text: #eef2ff;
+      --muted: #a8b3c7;
+      --accent: #f5a623;
+      --accent-2: #3dd6c6;
+      --line: rgba(255,255,255,0.08);
+      --radius: 16px;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --max: 1080px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2a4a 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(11,18,32,0.85);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0.85rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: 0.75rem; color: var(--text); text-decoration: none; font-weight: 700; }
+    .badge {
+      width: 2.25rem; height: 2.25rem; border-radius: 10px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), #ff7a18);
+      color: #1a1000; font-size: 0.75rem; font-weight: 800;
+    }
+    .nav-links { display: flex; gap: 1.1rem; flex-wrap: wrap; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 0.95rem; text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.4rem; border-radius: 999px; padding: 0.7rem 1.15rem;
+      font-weight: 700; border: 0; cursor: pointer; text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: #1a1000; }
+    .btn-primary:hover { filter: brightness(1.05); text-decoration: none; }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-ghost:hover { border-color: var(--muted); text-decoration: none; }
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      display: grid; gap: 2rem;
+      grid-template-columns: 1.3fr 0.9fr;
+      align-items: center;
+    }
+    .nav-toggle {
+      display: none; background: transparent; border: 1px solid var(--line);
+      color: var(--text); border-radius: 10px; padding: 0.45rem 0.65rem; cursor: pointer;
+    }
+    @media (max-width: 840px) {
+      .hero { grid-template-columns: 1fr; padding-top: 2.5rem; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none; position: absolute; left: 1rem; right: 1rem; top: 3.6rem;
+        flex-direction: column; align-items: stretch; gap: 0.35rem;
+        background: rgba(11,18,32,0.98); border: 1px solid var(--line);
+        border-radius: 14px; padding: 0.75rem; box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.55rem 0.65rem; border-radius: 8px; }
+      .nav-links a:hover { background: rgba(255,255,255,0.05); }
+      header .nav { position: relative; flex-wrap: wrap; }
+      header .btn-primary { display: none; }
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--accent-2); font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.02em; text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      line-height: 1.1; margin: 0.55rem 0 1rem;
+    }
+    .lede { color: var(--muted); font-size: 1.1rem; max-width: 38rem; margin: 0 0 1.5rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent), var(--surface);
+      border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 1.25rem; box-shadow: var(--shadow);
+    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+    .stat {
+      background: var(--card); border-radius: 12px; padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+    }
+    .stat strong { display: block; font-size: 1.25rem; }
+    .stat span { color: var(--muted); font-size: 0.85rem; }
+    section { padding: 3rem 0; }
+    .section-title { margin: 0 0 0.4rem; font-size: 1.75rem; }
+    .section-sub { color: var(--muted); margin: 0 0 1.5rem; max-width: 40rem; }
+    .cards {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 840px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.2rem;
+    }
+    .card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .steps { display: grid; gap: 0.85rem; }
+    .step {
+      display: grid; grid-template-columns: auto 1fr; gap: 1rem;
+      align-items: start; background: var(--card);
+      border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem;
+    }
+    .num {
+      width: 2rem; height: 2rem; border-radius: 50%;
+      display: grid; place-items: center; font-weight: 800;
+      background: rgba(245,166,35,0.15); color: var(--accent);
+    }
+    .path {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;
+    }
+    @media (max-width: 840px) { .path { grid-template-columns: 1fr 1fr; } }
+    .path li {
+      list-style: none; background: var(--card); border: 1px solid var(--line);
+      border-radius: 12px; padding: 0.9rem; color: var(--muted); font-size: 0.95rem;
+    }
+    .path strong { display: block; color: var(--text); margin-bottom: 0.25rem; }
+    .cta-band {
+      margin: 1rem 0 2rem; padding: 1.75rem;
+      border-radius: calc(var(--radius) + 4px);
+      background: linear-gradient(120deg, rgba(245,166,35,0.16), rgba(61,214,198,0.1));
+      border: 1px solid var(--line);
+      display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+    }
+    footer {
+      border-top: 1px solid var(--line); padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem;
+    }
+    footer .cols { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+    @media (max-width: 700px) { footer .cols { grid-template-columns: 1fr; } }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="badge">26065</span>
+        <span>HSHCS Trojans</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" id="navToggle">Menu</button>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#path">Learn</a>
+        <a href="#join">Join</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="join.html">Join the team</a>
+    </div>
+  </header>
 
-    <!-- =========================
-         HEADER AND NAVIGATION
-    ========================== -->
-
-    <header class="site-header">
-        <div class="container nav-container">
-
-            <a href="#home" class="brand">
-                <span class="brand-name">HSHCS Trojans</span>
-                <span class="brand-team">FTC Team 26065</span>
-            </a>
-
-            <button
-                class="menu-button"
-                id="menuButton"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-controls="siteNav"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="site-nav" id="siteNav">
-                <a href="#home">Home</a>
-                <a href="#team">Our Team</a>
-                <a href="#ftc">FTC</a>
-                <a href="#projects">Projects</a>
-                <a href="#curriculum">Curriculum</a>
-                <a href="#join">Join</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="kicker">FIRST Tech Challenge · Team 26065</div>
+        <h1>Building robots. Developing engineers. Creating opportunities.</h1>
+        <p class="lede">
+          The official robotics team of the High School for Health Careers and Sciences.
+          No experience required — just curiosity, grit, and a willingness to build.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#join">Join HSHCS Trojans</a>
+          <a class="btn btn-ghost" href="#projects">See student projects</a>
         </div>
-    </header>
-
-
-    <main>
-
-        <!-- =========================
-             HERO SECTION
-        ========================== -->
-
-        <section class="hero" id="home">
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content">
-
-                <p class="eyebrow">
-                    High School for Health Careers and Sciences
-                </p>
-
-                <p class="team-badge">
-                    FIRST Tech Challenge Team 26065
-                </p>
-
-                <h1>
-                    HSHCS Trojans
-                </h1>
-
-                <p class="hero-tagline">
-                    Building robots. Developing engineers. Creating opportunities.
-                </p>
-
-                <p class="hero-text">
-                    The HSHCS Trojans bring students together to explore robotics,
-                    engineering, computer programming, artificial intelligence,
-                    competition, leadership, and teamwork through hands-on learning.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#team" class="button primary-button">
-                        Meet the Team
-                    </a>
-
-                    <a href="#curriculum" class="button secondary-button">
-                        Explore Our Curriculum
-                    </a>
-
-                    <a
-                        href="https://www.firstinspires.org/programs/ftc/"
-                        class="button outline-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit FIRST Tech Challenge
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             TEAM INTRODUCTION
-        ========================== -->
-
-        <section class="section" id="team">
-            <div class="container">
-
-                <div class="section-heading">
-                    <p class="section-label">Our Team</p>
-
-                    <h2>
-                        HSHCS Trojans Robotics
-                    </h2>
-
-                    <p class="section-introduction">
-                        The HSHCS Trojans are the official robotics team of the
-                        High School for Health Careers and Sciences. Our team
-                        welcomes students who are interested in building,
-                        programming, designing, competing, and learning how
-                        technology can solve real-world problems.
-                    </p>
-                </div>
-
-                <div class="feature-grid">
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">01</div>
-
-                        <h3>Engineering</h3>
-
-                        <p>
-                            Students apply the engineering design process to
-                            identify problems, create prototypes, test solutions,
-                            and improve their designs.
-                        </p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">02</div>
-
-                        <h3>Programming</h3>
-
-                        <p>
-                            Team members develop programming skills for robot
-                            control, autonomous movement, sensors, computer vision,
-                            and intelligent systems.
-                        </p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">03</div>
-
-                        <h3>Teamwork</h3>
-
-                        <p>
-                            Students build communication, leadership,
-                            documentation, presentation, and project-management
-                            skills through collaborative work.
-                        </p>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             FIRST TECH CHALLENGE
-        ========================== -->
-
-        <section class="section alternate-section" id="ftc">
-            <div class="container">
-
-                <div class="split-layout">
-
-                    <div class="split-content">
-
-                        <p class="section-label">
-                            FIRST Tech Challenge
-                        </p>
-
-                        <h2>
-                            FTC Team 26065
-                        </h2>
-
-                        <p>
-                            The HSHCS Trojans participate in FIRST Tech Challenge,
-                            an international robotics program in which students
-                            design, build, program, and operate robots for an
-                            annual competition challenge.
-                        </p>
-
-                        <p>
-                            FTC gives students opportunities to develop technical
-                            knowledge while practicing teamwork, strategy,
-                            problem-solving, outreach, leadership, and professional
-                            communication.
-                        </p>
-
-                        <a
-                            href="https://www.firstinspires.org/programs/ftc/"
-                            class="text-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Learn more on the official FIRST Tech Challenge website
-                            <span aria-hidden="true">→</span>
-                        </a>
-
-                    </div>
-
-                    <aside class="team-information-card">
-
-                        <p class="card-label">
-                            Official Team Information
-                        </p>
-
-                        <dl class="team-details">
-
-                            <div>
-                                <dt>Team Name</dt>
-                                <dd>HSHCS Trojans</dd>
-                            </div>
-
-                            <div>
-                                <dt>FTC Team Number</dt>
-                                <dd>26065</dd>
-                            </div>
-
-                            <div>
-                                <dt>School</dt>
-                                <dd>
-                                    High School for Health Careers and Sciences
-                                </dd>
-                            </div>
-
-                            <div>
-                                <dt>Program</dt>
-                                <dd>FIRST Tech Challenge</dd>
-                            </div>
-
-                            <div>
-                                <dt>Location</dt>
-                                <dd>New York, New York</dd>
-                            </div>
-
-                        </dl>
-
-                    </aside>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
-        <section class="section" id="projects">
-            <div class="container">
-
-                <div class="section-heading">
-                    <p class="section-label">Student Innovation</p>
-
-                    <h2>
-                        Featured robotics and AI projects
-                    </h2>
-
-                    <p class="section-introduction">
-                        Our students learn by designing, building, programming,
-                        testing, documenting, and presenting projects that combine
-                        robotics, engineering, and artificial intelligence.
-                    </p>
-                </div>
-
-                <div class="project-grid">
-
-                    <article class="project-card">
-
-                        <div class="project-number">01</div>
-
-                        <div class="project-content">
-                            <p class="project-category">
-                                Robotics and Computer Vision
-                            </p>
-
-                            <h3>
-                                AI Tic-Tac-Toe Robot
-                            </h3>
-
-                            <p>
-                                A robotic arm and computer-vision system designed
-                                to identify game pieces, understand the game board,
-                                make decisions, and play tic-tac-toe.
-                            </p>
-                        </div>
-
-                    </article>
-
-                    <article class="project-card">
-
-                        <div class="project-number">02</div>
-
-                        <div class="project-content">
-                            <p class="project-category">
-                                Artificial Intelligence
-                            </p>
-
-                            <h3>
-                                AI Object Detection
-                            </h3>
-
-                            <p>
-                                An interactive system that uses a camera and an AI
-                                model to identify and announce common objects in
-                                real time.
-                            </p>
-                        </div>
-
-                    </article>
-
-                    <article class="project-card">
-
-                        <div class="project-number">03</div>
-
-                        <div class="project-content">
-                            <p class="project-category">
-                                Competition Robotics
-                            </p>
-
-                            <h3>
-                                FIRST Tech Challenge Robot
-                            </h3>
-
-                            <p>
-                                Students analyze the annual FTC game, develop a
-                                strategy, prototype mechanisms, program the robot,
-                                and prepare for competition.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             CURRICULUM
-        ========================== -->
-
-        <section class="section curriculum-section" id="curriculum">
-            <div class="container">
-
-                <div class="section-heading light-heading">
-                    <p class="section-label">
-                        Robotics Curriculum
-                    </p>
-
-                    <h2>
-                        A pathway from beginner to competition-ready
-                    </h2>
-
-                    <p class="section-introduction">
-                        Our developing curriculum will connect classroom learning,
-                        robotics club activities, engineering projects, and FIRST
-                        Tech Challenge preparation.
-                    </p>
-                </div>
-
-                <div class="curriculum-grid">
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">01</span>
-
-                        <h3>
-                            Foundations and Safety
-                        </h3>
-
-                        <p>
-                            Lab safety, tools, teamwork, robotics systems,
-                            measurement, and introductory design challenges.
-                        </p>
-                    </article>
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">02</span>
-
-                        <h3>
-                            Mechanical Design
-                        </h3>
-
-                        <p>
-                            Structures, drivetrains, gears, mechanisms,
-                            prototyping, CAD, fabrication, and iterative design.
-                        </p>
-                    </article>
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">03</span>
-
-                        <h3>
-                            Electronics and Sensors
-                        </h3>
-
-                        <p>
-                            Motors, controllers, wiring, power systems, sensors,
-                            troubleshooting, and safe electrical practices.
-                        </p>
-                    </article>
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">04</span>
-
-                        <h3>
-                            Robot Programming
-                        </h3>
-
-                        <p>
-                            Driver-controlled programming, autonomous movement,
-                            logic, debugging, telemetry, and sensor integration.
-                        </p>
-                    </article>
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">05</span>
-
-                        <h3>
-                            AI and Computer Vision
-                        </h3>
-
-                        <p>
-                            Image recognition, object detection, camera systems,
-                            machine learning concepts, ethics, and responsible AI.
-                        </p>
-                    </article>
-
-                    <article class="curriculum-card">
-                        <span class="curriculum-number">06</span>
-
-                        <h3>
-                            FTC Competition Readiness
-                        </h3>
-
-                        <p>
-                            Game analysis, strategy, engineering notebooks,
-                            outreach, presentations, testing, scouting, and match
-                            preparation.
-                        </p>
-                    </article>
-
-                </div>
-                 <div class="curriculum-card">
-    <h3>Unit 1: Engineering Foundations & FTC Mobility</h3>
-
-    <p>
-        Students build and operate a REV robotics drivetrain while developing
-        foundational skills in mechanical assembly, electronics, driver control,
-        precision maneuverability, path planning, engineering documentation,
-        and introductory autonomous programming.
-    </p>
-
-    <p>
-        <strong>FTC Skill Builders:</strong>
-        Fast Lane • Navig8r • Wayfinder
-    </p>
-
-    <a href="curriculum/unit-1-ftc-mobility.pdf"
-       target="_blank"
-       class="button primary-button">
-        View Unit 1 Scope &amp; Sequence
-    </a>
-</div>
-
-<div class="curriculum-notice">
-    <p>
-        Detailed curriculum maps, lessons, student resources,
-        project guides, and competition materials will be added as
-        the program develops.
-    </p>
-</div>
-           
-        </section>
-
-
-        <!-- =========================
-             JOIN THE TEAM
-        ========================== -->
-
-        <section class="section join-section" id="join">
-            <div class="container join-content">
-
-                <div>
-                    <p class="section-label">
-                        Become a Trojan
-                    </p>
-
-                    <h2>
-                        No previous robotics experience is required
-                    </h2>
-
-                    <p>
-                        Students can join the team to learn robotics, programming,
-                        engineering, electronics, fabrication, artificial
-                        intelligence, leadership, and teamwork.
-                    </p>
-                </div>
-
-                <a
-                    class="button light-button"
-                    href="mailto:hshcsroboticsclub@gmail.com?subject=HSHCS%20Trojans%20Robotics%20Team%20Membership"
-                >
-                    Contact the Team
-                </a>
-
-            </div>
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="section" id="contact">
-            <div class="container contact-content">
-
-                <p class="section-label">Contact</p>
-
-                <h2>
-                    Connect with the HSHCS Trojans
-                </h2>
-
-                <p>
-                    High School for Health Careers and Sciences<br>
-                    New York, New York
-                </p>
-
-                <p>
-                    FIRST Tech Challenge Team 26065
-                </p>
-
-                <a
-                    class="email-link"
-                    href="mailto:hshcsroboticsclub@gmail.com"
-                >
-                    hshcsroboticsclub@gmail.com
-                </a>
-
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-
-            <div>
-                <p class="footer-team-name">
-                    HSHCS Trojans
-                </p>
-
-                <p>
-                    FIRST Tech Challenge Team 26065
-                </p>
-            </div>
-
-            <p>
-                © <span id="currentYear"></span>
-                High School for Health Careers and Sciences Robotics Club
-            </p>
-
+      </div>
+      <aside class="panel" aria-label="Team facts">
+        <div class="stat-grid">
+          <div class="stat"><strong>26065</strong><span>FTC team number</span></div>
+          <div class="stat"><strong>NYC</strong><span>New York, New York</span></div>
+          <div class="stat"><strong>HSHCS</strong><span>Health Careers &amp; Sciences</span></div>
+          <div class="stat"><strong>Open</strong><span>Beginners welcome</span></div>
         </div>
-    </footer>
+      </aside>
+    </div>
 
+    <section id="about">
+      <div class="wrap">
+        <h2 class="section-title">What students actually do</h2>
+        <p class="section-sub">Hands-on robotics, engineering, programming, AI, competition, and leadership — not just lectures.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Engineering</h3>
+            <p>Identify problems, prototype mechanisms, test, and iterate using the engineering design process.</p>
+          </article>
+          <article class="card">
+            <h3>Programming</h3>
+            <p>Driver control, autonomous movement, sensors, computer vision, and intelligent systems.</p>
+          </article>
+          <article class="card">
+            <h3>Teamwork</h3>
+            <p>Communication, leadership, documentation, presentations, and project management under real deadlines.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="projects">
+      <div class="wrap">
+        <h2 class="section-title">Featured projects</h2>
+        <p class="section-sub">Students design, build, program, document, and present work that mixes robotics and AI.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>AI Tic-Tac-Toe Robot</h3>
+            <p>A robotic arm and vision system that reads the board, decides moves, and plays tic-tac-toe.</p>
+          </article>
+          <article class="card">
+            <h3>AI Object Detection</h3>
+            <p>Camera + AI model that identifies common objects and announces them in real time.</p>
+          </article>
+          <article class="card">
+            <h3>FTC Competition Robot</h3>
+            <p>Strategy, prototypes, programming, and match prep for the annual FIRST Tech Challenge game.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="path">
+      <div class="wrap">
+        <h2 class="section-title">From beginner to competition-ready</h2>
+        <p class="section-sub">A clear path so new members know where they start and how they grow. Unit 1 materials are already live: <a href="https://hshcsroboticsclub.org/curriculum/unit-1-ftc-mobility.pdf">FTC Mobility PDF</a>.</p>
+        <ul class="path">
+          <li><strong>1. Foundations &amp; safety</strong>Tools, teamwork, measurement, intro design challenges</li>
+          <li><strong>2. Mechanical design</strong>Drivetrains, gears, CAD, fabrication, iteration</li>
+          <li><strong>3. Electronics &amp; sensors</strong>Motors, wiring, power, troubleshooting</li>
+          <li><strong>4. Robot programming</strong>Teleop, autonomous, debugging, telemetry</li>
+          <li><strong>5. AI &amp; vision</strong>Object detection, cameras, responsible AI</li>
+          <li><strong>6. FTC readiness</strong>Strategy, notebooks, outreach, scouting, matches</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2 class="section-title" style="margin:0">Ready to join?</h2>
+            <p class="section-sub" style="margin:0.4rem 0 0">Email the coaches. Tell them your grade and whether you’re interested in building, coding, design, or outreach.</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center"><a class="btn btn-primary" href="mailto:hshcsroboticsclub@gmail.com?subject=Join%20HSHCS%20Trojans%20FTC%2026065">Email to join</a><a class="btn btn-ghost" href="join.html">Parents &amp; full join guide</a></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><strong>Send a short intro email</strong><div style="color:var(--muted)">Name, grade, and what you want to learn.</div></div></div>
+          <div class="step"><div class="num">2</div><div><strong>Come to a meeting</strong><div style="color:var(--muted)">Meet the team, tour the lab, and try a hands-on activity.</div></div></div>
+          <div class="step"><div class="num">3</div><div><strong>Pick a role and build</strong><div style="color:var(--muted)">Mechanical, programming, outreach, or documentation — grow from there.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="sponsors">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <h2 class="section-title" style="margin:0">Support the team</h2>
+            <p class="section-sub" style="margin:0.4rem 0 0">Parts, tools, competition fees, and outreach — local partners keep students building.</p>
+          </div>
+          <a class="btn btn-primary" href="sponsors.html">Become a sponsor</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap panel">
+        <h2 class="section-title">Connect with the Trojans</h2>
+        <p class="section-sub">High School for Health Careers and Sciences · New York, New York · FTC Team 26065</p>
+        <p><a href="mailto:hshcsroboticsclub@gmail.com">hshcsroboticsclub@gmail.com</a> · <a href="https://www.firstinspires.org/robotics/ftc" rel="noopener" target="_blank">About FIRST Tech Challenge</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap cols">
+      <div>
+        <strong style="color:var(--text)">HSHCS Trojans · FTC 26065</strong>
+        <p>Building robots. Developing engineers. Creating opportunities.</p>
+      </div>
+      <div>
+        <div>Parents &amp; sponsors: email us to visit a practice or support the team.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('primary-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
