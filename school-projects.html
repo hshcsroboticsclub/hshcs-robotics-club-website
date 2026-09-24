@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School projects | HSHCS Trojans</title>
+  <meta name="description" content="Classroom robotics and AI projects at HSHCS — separate from FIRST Tech Challenge competition work." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #0b1220; --surface: #121a2b; --card: #182235; --text: #eef2ff;
+      --muted: #a8b3c7; --accent: #f5a623; --accent-2: #3dd6c6;
+      --line: rgba(255,255,255,0.08); --radius: 16px; --max: 960px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.55; }
+    a { color: var(--accent-2); }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; padding: 2.5rem 0 3.5rem; }
+    .back { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+    .back:hover { color: var(--text); }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 1rem 0 0.5rem; }
+    .lede { color: var(--muted); margin: 0 0 1.5rem; max-width: 40rem; }
+    .note {
+      background: rgba(61,214,198,0.08); border: 1px solid var(--line);
+      border-radius: 12px; padding: 0.9rem 1.1rem; color: var(--muted); margin: 0 0 1.75rem;
+    }
+    .cards { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+    }
+    .card-photo { aspect-ratio: 16 / 10; overflow: hidden; background: #0a101c; }
+    .card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-body { padding: 1.2rem; }
+    .card h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .btn {
+      display: inline-flex; margin-top: 2rem; background: var(--accent); color: #1a1000;
+      font-weight: 700; text-decoration: none; border-radius: 999px; padding: 0.7rem 1.15rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← Back to homepage</a>
+    <h1>School projects</h1>
+    <p class="lede">Classroom robotics and AI builds at HSHCS. These are school engineering projects — not FIRST Inspires / FIRST Tech Challenge competition activities.</p>
+    <p class="note">For FTC Team 26065 competition work, see the <a href="index.html#ftc">FIRST Tech Challenge</a> section on the homepage.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="card-photo"><img src="images/project-laptop.jpg" width="800" height="760" alt="Robot chassis beside a laptop showing CAD" /></div>
+        <div class="card-body">
+          <h2>AI Tic-Tac-Toe Robot</h2>
+          <p>A robotic arm and vision system that reads the board, decides moves, and plays tic-tac-toe.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-photo"><img src="images/project-build.jpg" width="800" height="1066" alt="Close-up of a robot chassis under construction" /></div>
+        <div class="card-body">
+          <h2>AI Object Detection</h2>
+          <p>Camera + AI model that identifies common objects and announces them in real time.</p>
+        </div>
+      </article>
+    </div>
+    <a class="btn" href="index.html#ftc">Back to FTC on the homepage</a>
+  </div>
+</body>
+</html>
