@@ -11,6 +11,7 @@
   <meta property="og:description" content="Building robots. Developing engineers. Creating opportunities. Beginners welcome." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hshcsroboticsclub.org/" />
+  <meta property="og:image" content="https://hshcsroboticsclub.org/images/hero-team.jpg" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5a623'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='800' fill='%231a1000'%3E26065%3C/text%3E%3C/svg%3E" />
   <style>
     :root {
@@ -165,6 +166,60 @@
     }
     footer .cols { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
     @media (max-width: 700px) { footer .cols { grid-template-columns: 1fr; } }
+
+    .hero-visual { display: grid; gap: 0.85rem; }
+    .hero-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+      max-height: 440px;
+      background: var(--card);
+    }
+    .hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .card { overflow: hidden; padding: 0; }
+    .card-body { padding: 1.2rem; }
+    .card-photo {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #0a101c;
+    }
+    .card-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .about-split {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: stretch;
+    }
+    @media (max-width: 840px) { .about-split { grid-template-columns: 1fr; } }
+    .about-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      min-height: 220px;
+    }
+    .about-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 840px) { .gallery { grid-template-columns: 1fr 1fr; } }
+    .gallery figure {
+      margin: 0; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--line); background: var(--card);
+      aspect-ratio: 4 / 3;
+    }
+    .gallery figure:first-child { grid-row: span 2; aspect-ratio: auto; min-height: 100%; }
+    .gallery img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
   </style>
 </head>
 <body>
@@ -177,6 +232,7 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" id="navToggle">Menu</button>
       <nav class="nav-links" id="primary-nav" aria-label="Primary">
         <a href="#about">About</a>
+        <a href="#gallery">Photos</a>
         <a href="#projects">Projects</a>
         <a href="#path">Learn</a>
         <a href="#join">Join</a>
@@ -201,12 +257,17 @@
           <a class="btn btn-ghost" href="#projects">See student projects</a>
         </div>
       </div>
-      <aside class="panel" aria-label="Team facts">
-        <div class="stat-grid">
-          <div class="stat"><strong>26065</strong><span>FTC team number</span></div>
-          <div class="stat"><strong>NYC</strong><span>New York, New York</span></div>
-          <div class="stat"><strong>HSHCS</strong><span>Health Careers &amp; Sciences</span></div>
-          <div class="stat"><strong>Open</strong><span>Beginners welcome</span></div>
+      <aside class="hero-visual" aria-label="Team photo and facts">
+        <div class="hero-photo">
+          <img src="images/hero-team.jpg" width="800" height="1066" alt="HSHCS Trojans students posing with their robot" />
+        </div>
+        <div class="panel">
+          <div class="stat-grid">
+            <div class="stat"><strong>26065</strong><span>FTC team number</span></div>
+            <div class="stat"><strong>NYC</strong><span>New York, New York</span></div>
+            <div class="stat"><strong>HSHCS</strong><span>Health Careers &amp; Sciences</span></div>
+            <div class="stat"><strong>Open</strong><span>Beginners welcome</span></div>
+          </div>
         </div>
       </aside>
     </div>
@@ -215,19 +276,36 @@
       <div class="wrap">
         <h2 class="section-title">What students actually do</h2>
         <p class="section-sub">Hands-on robotics, engineering, programming, AI, competition, and leadership — not just lectures.</p>
-        <div class="cards">
-          <article class="card">
-            <h3>Engineering</h3>
-            <p>Identify problems, prototype mechanisms, test, and iterate using the engineering design process.</p>
-          </article>
-          <article class="card">
-            <h3>Programming</h3>
-            <p>Driver control, autonomous movement, sensors, computer vision, and intelligent systems.</p>
-          </article>
-          <article class="card">
-            <h3>Teamwork</h3>
-            <p>Communication, leadership, documentation, presentations, and project management under real deadlines.</p>
-          </article>
+        <div class="about-split">
+          <div class="cards" style="grid-template-columns:1fr">
+            <article class="card"><div class="card-body">
+              <h3>Engineering</h3>
+              <p>Identify problems, prototype mechanisms, test, and iterate using the engineering design process.</p>
+            </div></article>
+            <article class="card"><div class="card-body">
+              <h3>Programming</h3>
+              <p>Driver control, autonomous movement, sensors, computer vision, and intelligent systems.</p>
+            </div></article>
+            <article class="card"><div class="card-body">
+              <h3>Teamwork</h3>
+              <p>Communication, leadership, documentation, presentations, and project management under real deadlines.</p>
+            </div></article>
+          </div>
+          <div class="about-photo">
+            <img src="images/about-lab.jpg" width="800" height="1066" alt="Students building robots in the HSHCS lab" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" aria-label="Team photos">
+      <div class="wrap">
+        <h2 class="section-title">Life on the team</h2>
+        <p class="section-sub">Workshop time, builds, and the robots students bring to life.</p>
+        <div class="gallery">
+          <figure><img src="images/gallery-workshop.jpg" width="800" height="1066" alt="Team workshop with students collaborating around robots" loading="lazy" /></figure>
+          <figure><img src="images/gallery-assemble.jpg" width="800" height="936" alt="Close-up of a student assembling a robot frame" loading="lazy" /></figure>
+          <figure><img src="images/gallery-parts.jpg" width="800" height="640" alt="Robot parts and design materials on a workbench" loading="lazy" /></figure>
         </div>
       </div>
     </section>
@@ -238,16 +316,25 @@
         <p class="section-sub">Students design, build, program, document, and present work that mixes robotics and AI.</p>
         <div class="cards">
           <article class="card">
-            <h3>AI Tic-Tac-Toe Robot</h3>
-            <p>A robotic arm and vision system that reads the board, decides moves, and plays tic-tac-toe.</p>
+            <div class="card-photo"><img src="images/project-laptop.jpg" width="800" height="760" alt="Robot assembly next to a laptop used for programming" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>AI Tic-Tac-Toe Robot</h3>
+              <p>A robotic arm and vision system that reads the board, decides moves, and plays tic-tac-toe.</p>
+            </div>
           </article>
           <article class="card">
-            <h3>AI Object Detection</h3>
-            <p>Camera + AI model that identifies common objects and announces them in real time.</p>
+            <div class="card-photo"><img src="images/project-build.jpg" width="800" height="1066" alt="Close-up of a robot chassis under construction" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>AI Object Detection</h3>
+              <p>Camera + AI model that identifies common objects and announces them in real time.</p>
+            </div>
           </article>
           <article class="card">
-            <h3>FTC Competition Robot</h3>
-            <p>Strategy, prototypes, programming, and match prep for the annual FIRST Tech Challenge game.</p>
+            <div class="card-photo"><img src="images/project-ftc.jpg" width="800" height="1066" alt="Student working on the FTC competition robot" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>FTC Competition Robot</h3>
+              <p>Strategy, prototypes, programming, and match prep for the annual FIRST Tech Challenge game.</p>
+            </div>
           </article>
         </div>
       </div>
